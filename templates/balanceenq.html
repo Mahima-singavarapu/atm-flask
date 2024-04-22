@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Bank ATM</title>
+    <link rel="icon" type="image/x-icon" href="/static/piggy-bank.png">
+</head>
+<style>
+    body {
+        background-color: rgb(222, 202, 101);
+        font-family: monospace;
+    }
+
+    .box {
+        background-color: steelblue;
+        border: 25px solid rgb(96, 94, 94);
+        border-radius: 100px;
+        width: 70vw;
+        height: 90vh;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: whitesmoke;
+        margin-top: 130px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    button {
+        font-size: 25px;
+        margin-top: 30px;
+        width: 10vw;
+        height: 7vh;
+        border-radius: 25px;
+        border: 3px solid rgb(96, 94, 94);
+        font-family: inherit;
+        background-color: rgb(216, 212, 212);
+    }
+
+    button:active {
+        box-shadow: 0px 5px 5px rgb(100, 99, 99);
+        transform: translateY(3px);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(96, 94, 94);
+    }
+    .container{
+        border: 2px solid rgb(96, 94, 94);
+        width: 95vw;
+        height:97vh;
+        background-color: rgb(96, 94, 94);
+    }
+</style>
+
+<body>
+    <center>
+        <div class="container">
+        <div class="box">
+            <h1>BALANCE ENQUIRY</h1>
+            <form method="post">
+                <h2>Your balance is {{balance}}</h2>
+                <button><a href="{{url_for('withdrawal',cardno=cardno)}}">WITHDRAW</a></button>
+                <button><a href="{{url_for('last')}}">CANCEL</a></button>
+            </form>
+        </div>
+    </div>
+    </center>
+</body>
+
+</html>

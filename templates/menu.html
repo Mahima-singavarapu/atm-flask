@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Bank ATM</title>
+    <link rel="icon" type="image/x-icon" href="/static/piggy-bank.png">
+</head>
+<style>
+    body {
+        background-color: rgb(222, 202, 101);
+        font-family: monospace;
+    }
+
+    .box {
+        background-color: steelblue;
+        border: 25px solid rgb(96, 94, 94);
+        border-radius: 100px;
+        width: 70vw;
+        height: 90vh;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: whitesmoke;
+        margin-top: 50px;
+    }
+
+    h5 {
+        font-size: 20px;
+        color: rgb(50, 221, 50);
+    }
+
+    h4 {
+        font-size: 15px;
+        margin-top: -20px;
+    }
+
+    button {
+        font-size: 25px;
+        margin-top: 30px;
+        width: 30vw;
+        height: 7vh;
+        border-radius: 25px;
+        border: 3px solid rgb(96, 94, 94);
+        font-family: inherit;
+        background-color: rgb(216, 212, 212);
+    }
+
+    button:active {
+        box-shadow: 0px 5px 5px rgb(100, 99, 99);
+        transform: translateY(3px);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .box1 {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .box2 {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .box3 {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(96, 94, 94);
+    }
+    .container{
+        border: 2px solid rgb(96, 94, 94);
+        width: 95vw;
+        height:97vh;
+        background-color: rgb(96, 94, 94);
+    }
+</style>
+
+<body>
+    <center>
+        <div class="container">
+        <div class="box">
+            <h1>MENU</h1>
+            <h5>Hello {{name}} Choose one option below..</h5><br />
+            <form method="get">
+                <div class="box1">
+                    <button><a href="{{url_for('balanceenq', cardno=cardno)}}">Balance Enquiry</a></button>
+                    <button><a href="{{url_for('changepin', cardno=cardno)}}">Change Pin</a></button>
+                </div>
+                <div class="box2">
+                    <button><a href="{{url_for('ministat', cardno=cardno)}}">Mini Statement</a></button>
+                    <button><a href="{{url_for('withdrawal', cardno=cardno)}}">Cash Withdrawal</a></button>
+                </div>
+                <div class="box3">
+                    <button><a href="{{url_for('deposit', cardno=cardno)}}">Deposit</a></button>
+                    <button><a href="{{url_for('last')}}">Cancel</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Bank ATM</title>
+    <link rel="icon" type="image/x-icon" href="/static/piggy-bank.png">
+</head>
+<style>
+    body {
+        background-color: rgb(222, 202, 101);
+        font-family: monospace;
+    }
+    .container{
+        border: 2px solid rgb(96, 94, 94);
+        width: 95vw;
+        height:97vh;
+        background-color: rgb(96, 94, 94);
+    }
+
+    .box {
+        background-color: steelblue;
+        border: 25px solid rgb(79, 77, 77);
+        border-radius: 100px;
+        width: 70vw;
+        height: 90vh;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: whitesmoke;
+        margin-top: 50px;
+    }
+
+    h5 {
+        font-size: 20px;
+        color: rgb(50, 221, 50);
+    }
+
+    .one {
+        width: 250px;
+        height: 1vh;
+        border: 5px solid rgb(90, 90, 90);
+        outline: 0;
+    }
+
+    .two {
+        border: none;
+        outline: 0;
+        margin-top: 40px;
+        width: 3vw;
+        height: 4vh;
+        font-size: 20px;
+    }
+
+    ::placeholder {
+        text-align: center;
+        color: black;
+        font-family: inherit;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    button {
+        margin-top: 50px;
+        width: 10vw;
+        height: 4vh;
+        border-radius: 15px;
+        border: none;
+        font-family: inherit;
+        box-shadow: 0px 3px 3px rgb(5, 5, 5);
+        transform: translateY(-10px);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        color: rgb(96, 94, 94);
+    }
+    button:active{
+        box-shadow: 0px 5px 5px rgb(100, 99, 99);
+        transform: translateY(3px);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    a {
+        text-decoration: none;
+        color: rgb(96, 94, 94);
+    }
+</style>
+
+<body>
+    <center>
+        <div class="container">
+        <div class="box">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class=flashes style="list-style-type: none; color:rgb(140, 32, 32);font-size:20px">{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <h1>Welcome to Piggy bank ATM</h1>
+            <img src="/static/piggy-bank.png" width="120px" />
+            <h5>Please insert the Card and enter the pin below</h5>
+            <form method="post" novalidate>
+                <input class="one" type="text" name="card" autocomplete="off" reqiured /><br />
+                <input class="two" placeholder="PIN" type="password" name="pin" autocomplete="off" required /><br />
+                <button>Submit</button>
+            </form novalidate>  
+        </div>
+    </div>
+    </center>
+</body>
+
+</html>
